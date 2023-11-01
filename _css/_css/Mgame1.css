@@ -1,0 +1,140 @@
+*{  /* 1de3 */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f4c531;
+}
+
+
+.wrapper {
+    box-sizing: content-box;
+    width: 28.87em; /* a unidade em é definida como o font-sizde atual */
+    padding: 2.5em 3em;
+    background-color:aquamarine;
+    position: absolute; 
+    /*  possui dois comportamentos diferente. O primeiro é quando o elemento com essa propriedade 
+    possui um elemento pai de valor diferente de static. Neste caso, ele terá este elemento pai como 
+    referencia para ser posicionado. Todo elemento pai que tiver qualquer valor de position , menos o 
+    static, será referência para posicionar o elemnto filho absolute*/
+    transform: translate(-50, -50); /* desloca a box pelo canto superior esquerdo 50% do quadrante
+    (1/4 do comprimento do topo) para esquerda e 50% do comprimeno da (14) altura para baixo  */
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em; /* arredonda os cantos da box com raio de 60% do tamanho da fonte padrão*/
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0.0.2); /* projeta sombra da box com largura de 90% do 
+    tamanho da fonte padrão acima do topo e largura de 280% do tamanho da fonte padrão na lateral 
+    direita */
+}
+
+.game-container {
+    position:relative; /* o position relative é usado quando queremos alterar a posição inicial de um
+    elemento tendo como referência a posição inicial dele. ao aplicarmos essa propriedade em um elemento,
+    ele não muda de posição, pois já vai estar posicionado em sua posição de referência. porém se 
+    aplicarmos top: 50px, e left: 50px a sua posição se altera 50px de cima para baixo, e 50px da 
+    esquerda para direita tendo como referência a sua posição inicial */
+    width: 100%;
+    display: grid;
+    gap: 0.6em; /* o espaçamento a esquerda e abaixo entre, entre os elemntos do grid será 60% do tamanho
+     da fonte padrão */
+}
+ 
+.stats-container {
+    text-align: right;
+    margin-bottom: 1.2em;
+}
+
+.stats-container span {
+    font-weight: 600;
+}
+
+.card-container { /* 2de3 */
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+
+}
+
+.card-before, 
+.card-after {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid 000000;
+    transition: transform 0.7 ease-out;
+    backface-visibility: hidden; 
+}
+
+.card-before {
+    background-color: #f4c531;
+    font-size: 2.8em;
+    font-weight: 600;
+
+}
+
+.card-after {
+    background-color: #ffffff;
+    transform: rotateY(180deg);    
+}
+
+.card-container-flipped .card-before {
+    transform:rotateY('180deg')
+}
+
+.card-container-flipped .card-after {
+    transform:rotateY('0deg')
+}
+
+.controls-container {     /* 3 de 3 */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4c531;
+    top: 0;
+}
+
+button {
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 1.5em;
+    cursor: pointer;
+}
+
+#stop {
+    font-size: 1.1em;
+    display: block;
+    margin: 1.1em auto 0 auto;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.controls-container button {
+    font-size: 1.1em;
+    box-shadow: 0 0.6em 2em rgba(86, 66, 0.0.2);
+}
+
+.hide {
+    display: none;
+}
+
+#result {
+    text-align: center;
+}
+
+#result h2 {
+    font-size: 2.5em;
+}
+#result h4 {
+    font: 1.8em;
+    margin: 0.6em 0 1em 0;
+}
+
